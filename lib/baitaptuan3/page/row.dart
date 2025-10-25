@@ -30,7 +30,6 @@ class row extends StatelessWidget {
             return Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: List.generate(3, (colIndex) {
-                // Chọn màu dựa vào cột
                 Color boxColor;
                 if (colIndex == 1) {
                   boxColor = Colors.blue.shade800;

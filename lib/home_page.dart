@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:laptrinhdidong/baitaptuan3/ui_basic.dart';
+import 'package:laptrinhdidong/he_thong_quan_ly_thu_vien/main_sach.dart';
 import 'baitaptuan2/screen_week2.dart';
 import 'baitaptuan3/screen_week3.dart';
-// import 'screens/week3_screen.dart';
-// import 'screens/week4_screen.dart';
-// import 'screens/week5_screen.dart';
+import 'on_board_flow/splash_screen.dart';
 
+import 'dataFlow/enterEmail.dart';
+import 'loginFirebase/loginFirebase.dart';
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
 
@@ -13,9 +15,11 @@ class HomePage extends StatelessWidget {
     final weeks = [
       {'title': 'Tuần 2', 'page': const Week1Screen()},
       {'title': 'Tuần 3', 'page': const screem_week3()},
-      // {'title': 'Tuần 3', 'page': const Week3Screen()},
-      // {'title': 'Tuần 4', 'page': const Week4Screen()},
-      // {'title': 'Tuần 5', 'page': const Week5Screen()},
+      {'title': 'Bài tập ui cơ bản', 'page': const UiBasic()},
+      {'title': 'Tuần 5-Task Managemt', 'page': const spashScreen()},
+      {'title': 'Hệ thống quản lý thư viện', 'page': const MainBook()},
+      {'title': 'Data Flow', 'page': const EnterEmailPage()},
+      // {'title': 'Login Firebase', 'page': const LoginScreen()},
     ];
 
     return Scaffold(
@@ -31,13 +35,6 @@ class HomePage extends StatelessWidget {
             elevation: 4,
             margin: const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
             child: ListTile(
-              leading: CircleAvatar(
-                backgroundColor: Colors.blue,
-                child: Text(
-                  '${index + 1}',
-                  style: const TextStyle(color: Colors.white),
-                ),
-              ),
               title: Text(
                 week['title'] as String,
                 style: const TextStyle(fontSize: 20, fontWeight: FontWeight.bold),

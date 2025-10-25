@@ -5,7 +5,7 @@ import 'page/text_detail.dart';
 import 'page/textFiel.dart';
 import 'page/row.dart';
 import 'page/column.dart';
-
+import 'page/lazyColumn.dart';
 class UIComponent extends StatelessWidget {
   const UIComponent({super.key});
 
@@ -40,7 +40,7 @@ class UIComponent extends StatelessWidget {
           buildUIButton(context, 'Column', 'Arranges elements vertically', Colors.lightBlue.shade100, column()),
           buildUIButton(context, 'Row', 'Arranges elements horizontally', Colors.lightBlue.shade100, row()),
 
-          buildUIButton(context, 'Tự tìm hiểu', 'Tìm ra tất cả các thành phần UI cơ bản', Colors.red.shade100, null),
+          buildUIButton(context, 'lazy column', 'nhập số và tạo danh sách', Colors.lightBlue.shade100, LazyColumn()),
         ],
       ),
     );

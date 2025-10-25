@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
 
-class Bai1Screen extends StatelessWidget {
-  const Bai1Screen({super.key});
+import 'package:laptrinhdidong/baitaptuan3/screen_week3.dart';
+
+
+class LazyColumn extends StatelessWidget {
+  const LazyColumn({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -23,6 +26,7 @@ class _NumberPageState extends State<NumberPage> {
   final TextEditingController _controller = TextEditingController();
   List<int> numbers = [];
   bool isGenerated = false;
+
   void generateNumbers() {
     setState(() {
       numbers.clear();
@@ -39,7 +43,6 @@ class _NumberPageState extends State<NumberPage> {
   }
 
   @override
-
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
@@ -52,16 +55,17 @@ class _NumberPageState extends State<NumberPage> {
           alignment: Alignment.center,
           child: Text(
             'Nhập số',
-            style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold, color: Colors.blue),
+            style: TextStyle(
+                fontSize: 20, fontWeight: FontWeight.bold, color: Colors.blue),
           ),
         ),
       ),
       body: SafeArea(
-        child: Center( // 🔹 căn giữa toàn bộ phần nhập
+        child: Center(
           child: Padding(
             padding: const EdgeInsets.symmetric(horizontal: 24.0),
             child: Column(
-              mainAxisSize: MainAxisSize.min, // chỉ chiếm không gian cần thiết
+              mainAxisSize: MainAxisSize.min,
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 const Text(
@@ -120,12 +124,13 @@ class _NumberPageState extends State<NumberPage> {
                       itemCount: numbers.length,
                       itemBuilder: (context, index) {
                         return Padding(
-                          padding: const EdgeInsets.symmetric(vertical: 6.0),
+                          padding:
+                          const EdgeInsets.symmetric(vertical: 6.0),
                           child: Container(
                             width: double.infinity,
                             padding: const EdgeInsets.all(12),
                             decoration: BoxDecoration(
-                              color: Colors.red,
+                              color: Colors.blue,
                               borderRadius: BorderRadius.circular(20),
                             ),
                             child: Center(
@@ -143,15 +148,30 @@ class _NumberPageState extends State<NumberPage> {
                       },
                     ),
                   )
-
-                      : const Text(
-                    'Vui lòng nhập lại số nguyên dương',
-                    style: TextStyle(
-                      color: Colors.red,
-                      fontSize: 14,
-                      fontWeight: FontWeight.w500,
+                      : const Center(
+                    child: Text(
+                      'Vui lòng nhập lại số nguyên dương',
+                      style: TextStyle(
+                        color: Colors.red,
+                        fontSize: 14,
+                        fontWeight: FontWeight.w500,
+                      ),
                     ),
                   ),
+
+                const SizedBox(height: 20),
+
+                ElevatedButton(
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => const screem_week3(),
+                      ),
+                    );
+                  },
+                  child: const Text("Back To Root"),
+                ),
               ],
             ),
           ),
@@ -159,6 +179,4 @@ class _NumberPageState extends State<NumberPage> {
       ),
     );
   }
-
 }
-

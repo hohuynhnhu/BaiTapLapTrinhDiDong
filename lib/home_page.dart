@@ -4,9 +4,9 @@ import 'package:laptrinhdidong/he_thong_quan_ly_thu_vien/main_sach.dart';
 import 'baitaptuan2/screen_week2.dart';
 import 'baitaptuan3/screen_week3.dart';
 import 'on_board_flow/splash_screen.dart';
-
 import 'dataFlow/enterEmail.dart';
 import 'loginFirebase/loginFirebase.dart';
+import 'product_detail/productDetailScreen.dart';
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
 
@@ -19,7 +19,8 @@ class HomePage extends StatelessWidget {
       {'title': 'Tuần 5-Task Managemt', 'page': const spashScreen()},
       {'title': 'Hệ thống quản lý thư viện', 'page': const MainBook()},
       {'title': 'Data Flow', 'page': const EnterEmailPage()},
-      // {'title': 'Login Firebase', 'page': const LoginScreen()},
+      {'title': 'Login Firebase', 'page': LoginScreen()},
+      {'title': 'Product Detail', 'page': const ProductDetailPage()},
     ];
 
     return Scaffold(

@@ -22,3 +22,13 @@ subprojects {
 tasks.register<Delete>("clean") {
     delete(rootProject.layout.buildDirectory)
 }
+buildscript {
+    repositories {
+        google()
+        mavenCentral()
+    }
+    dependencies {
+        classpath("com.android.tools.build:gradle:8.1.2") // theo phiên bản hiện tại
+        classpath("com.google.gms:google-services:4.3.15") // plugin google-services
+    }
+}

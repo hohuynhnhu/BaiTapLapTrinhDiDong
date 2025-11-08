@@ -7,6 +7,7 @@ import 'on_board_flow/splash_screen.dart';
 import 'dataFlow/enterEmail.dart';
 import 'loginFirebase/loginFirebase.dart';
 import 'product_detail/productDetailScreen.dart';
+import 'baitaptuan7/home_screen.dart';
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
 
@@ -21,6 +22,7 @@ class HomePage extends StatelessWidget {
       {'title': 'Data Flow', 'page': const EnterEmailPage()},
       {'title': 'Login Firebase', 'page': LoginScreen()},
       {'title': 'Product Detail', 'page': const ProductDetailPage()},
+      {'title': 'Tuần 6: Gọi API', 'page': HomeScreen()},
     ];
 
     return Scaffold(
